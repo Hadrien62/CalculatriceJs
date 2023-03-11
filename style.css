@@ -1,0 +1,72 @@
+.back{
+    background-color: rgb(240 240 240);
+    width: 300px;
+    height: 340px;
+}
+.champs{
+    height: 100px;
+}
+.zoneT{
+    background-color: white;
+    width: 300px;
+    height: 100px;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+}
+.bouton{
+    margin-left: 18px;
+}
+#C{
+    position: relative;
+    right: 6px;
+}
+.bout{
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border: 0.5px solid black;
+    
+}
+.bout:hover{
+    opacity: 0.7;
+}
+
+.eff{
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    border: 0.5px solid black;
+    
+}
+.eff:hover{
+    opacity: 0.7;
+}
+.erase{
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    visibility: hidden;
+}
+.petage{
+    margin-top: 5px;
+}
+.detage{
+    margin-top: 5px;
+}
+.tetage{
+    margin-top: 5px;
+}
+.qetage{
+    margin-top: 5px;
+}
+.egale{
+    border: 0.5px solid black;
+    border-radius: 5px;
+    background-color: rgb(50 205 50);
+    width: 82px;
+}
+.egale:hover{
+    opacity: 0.7;
+}
