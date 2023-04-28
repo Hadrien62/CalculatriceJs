@@ -8,7 +8,7 @@ import { Repository } from 'typeorm';
 export class TimerService {
     constructor(
         @InjectRepository(Timer)
-        private timerRepository : Repository<Timer>,
+        private readonly TimerRepository : Repository<Timer>,
     ){}
 
     async createTime(id:string, timeTakenMs : number, created_at : Date){
@@ -21,7 +21,7 @@ export class TimerService {
     }
 
     async getTime(){
-        const res = await this.timerRepository.find();
+        const res = await this.TimerRepository.find();
         console.log('time is :', res);
         return res;
     }
