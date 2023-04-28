@@ -1,6 +1,6 @@
 import {BaseEntity, Column, Entity, PrimaryGeneratedColumn, CreateDateColumn} from 'typeorm';
 
-@Entity('erreur')
+@Entity('erreurs')
 export class Erreur extends BaseEntity{
     @PrimaryGeneratedColumn()
     id : string;

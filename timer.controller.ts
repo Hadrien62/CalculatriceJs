@@ -4,7 +4,7 @@ import { Timer } from './timer.entity';
 
 @Controller('timer')
 export class TimerController {
-    constructor(private readonly timerService:TimerService){}
+    constructor(private timerService:TimerService){}
     
     @Get()
     getTime(){
