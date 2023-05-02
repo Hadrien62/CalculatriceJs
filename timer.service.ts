@@ -23,7 +23,8 @@ export class TimerService {
     async getTime(){
         const res = await this.TimerRepository.find();
         const times = res.map(timer => timer.timeTakenMS);
-        console.log('time is :', times[3]);
-        return times[3];
+        const lastTime = times.pop();
+        console.log('time is :', lastTime);
+        return lastTime;
     }
 }
