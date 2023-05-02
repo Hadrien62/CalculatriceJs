@@ -21,7 +21,8 @@ export class ErreurService {
     async getErreur(){
         const res = await this.erreurRepository.find();
         const err = res.map(erreur => erreur.created_at);
-        console.log('erreur is signified at :', err[2]);
-        return err[2];
+        const lastErr = err.pop();
+        console.log('erreur is at :', lastErr);
+        return lastErr;
     }
 }
