@@ -79,7 +79,7 @@ class Calculatrice {
 
   sendTimeTaken(timeTaken) {
     let date1 = new Date();
-
+  
     let dateLocale = date1.toLocaleString('fr-FR',{
         year: 'numeric',
         month: 'numeric',
@@ -87,26 +87,23 @@ class Calculatrice {
         hour: 'numeric',
         minute: 'numeric',
         second: 'numeric'});
-
+  
     const url = 'http://localhost:3000/timer';
     const dataraw = {
       "timeTakenMS": timeTaken,
       "created_at" : dateLocale
     };
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url);
-    xhr.withCredentials = false;
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log("Data sent successfully");
-      } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        console.error("Error sending data:", xhr.statusText);
-      }
-    };
-    xhr.send(JSON.stringify(dataraw));
+    fetch(url,{
+      headers:{
+        'Accept' : 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method:'POST',
+      mode : 'no-cors',
+      body:JSON.stringify(dataraw)
+    })
   }
-
+  
   sendErreurAt(){
     let date1 = new Date();
 
@@ -122,19 +119,18 @@ class Calculatrice {
     const dataraw = {
       "created_at" : dateLocale
     };
-    var xhpp = new XMLHttpRequest();
-    xhpp.open("POST", url);
-    xhpp.withCredentials = false;
-    xhpp.setRequestHeader("Content-Type", "application/json");
-    xhpp.onreadystatechange = function () {
-      if (xhpp.readyState === 4 && xhpp.status === 200) {
-        console.log("Data sent successfully");
-      } else if (xhpp.readyState === 4 && xhpp.status !== 200) {
-        console.error("Error sending data:", xhpp.statusText);
-      }
-    };
-    xhpp.send(JSON.stringify(dataraw));
+
+    fetch(url,{
+      headers:{
+        'Accept' : 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method:'POST',
+      mode : 'no-cors',
+      body:JSON.stringify(dataraw)
+    })
   }
+
 }
 
 const calculatrice = new Calculatrice();
